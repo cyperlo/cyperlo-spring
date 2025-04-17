@@ -1,8 +1,7 @@
-package com.cyperlo.cyperlo.common.utils.encrypt;
+package com.cyperlo.common.utils;
 
 import cn.hutool.crypto.asymmetric.KeyType;
 import cn.hutool.crypto.asymmetric.RSA;
-import cn.hutool.core.codec.Base64;
 
 /**
  * RSA 加密解密工具类（基于 Hutool）

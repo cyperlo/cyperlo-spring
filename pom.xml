@@ -21,6 +21,7 @@
         <module>cyperlo-framework</module>
         <module>cyperlo-server</module>
         <module>cyperlo-dependencies</module>
+        <module>cyperlo-test</module>
     </modules>
 
     <dependencyManagement>

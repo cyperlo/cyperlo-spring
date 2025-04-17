@@ -105,6 +105,18 @@
                 <version>${revision}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.cyperlo</groupId>
+                <artifactId>cyperlo-spring-boot-starter-web</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cyperlo</groupId>
+                <artifactId>cyperlo-test</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
             <!-- camunda 的 mybatis 版本和 springboot3.3.7 有冲突, 先强行使用 3.5.19-->
             <dependency>
                 <groupId>org.mybatis</groupId>

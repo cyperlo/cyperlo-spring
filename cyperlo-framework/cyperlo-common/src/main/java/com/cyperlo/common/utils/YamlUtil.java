@@ -1,4 +1,4 @@
-package com.cyperlo.cyperlo.common.utils;
+package com.cyperlo.common.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
