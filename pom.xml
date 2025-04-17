@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.cyperlo</groupId>
+    <artifactId>cyperlo-spring</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+
+    <name>cyperlo-spring</name>
+    <description>cyperlo-spring</description>
+
+    <properties>
+        <revision>1.0.0-jdk17-SNAPSHOT</revision>
+        <java.version>17</java.version>
+        <spring.boot.version>3.3.7</spring.boot.version>
+    </properties>
+
+    <modules>
+        <module>cyperlo-framework</module>
+        <module>cyperlo-server</module>
+        <module>cyperlo-dependencies</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.cyperlo</groupId>
+                <artifactId>cyperlo-dependencies</artifactId>
+                <version>${revision}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
