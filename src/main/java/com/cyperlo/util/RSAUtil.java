@@ -1,18 +1,13 @@
-package com.cyperlo.cyperlo.common.utils.encrypt;
+package com.cyperlo.util;
 
 import cn.hutool.crypto.asymmetric.KeyType;
 import cn.hutool.crypto.asymmetric.RSA;
-import cn.hutool.core.codec.Base64;
 
 /**
  * RSA 加密解密工具类（基于 Hutool）
- * 
- * @author cyperlo
- * @version 1.0
- * @since 2025-04-17
  */
 public class RSAUtil {
-
+    
     /**
      * 生成RSA密钥对
      *
@@ -38,13 +33,13 @@ public class RSAUtil {
     /**
      * 使用私钥解密
      *
-     * @param encrypted 要解密的内容
+     * @param content 要解密的内容
      * @param privateKey 私钥字符串
      * @return 解密后的内容
      */
-    public static String decrypt(String encrypted, String privateKey) {
+    public static String decrypt(String content, String privateKey) {
         RSA rsa = new RSA(privateKey, null);
-        return rsa.decryptStr(encrypted, KeyType.PrivateKey);
+        return rsa.decryptStr(content, KeyType.PrivateKey);
     }
 
     /**
@@ -56,7 +51,7 @@ public class RSAUtil {
      */
     public static String sign(String content, String privateKey) {
         RSA rsa = new RSA(privateKey, null);
-        return rsa.encryptBase64(content, KeyType.PrivateKey);
+        return rsa.sign(content);
     }
 
     /**
@@ -69,11 +64,6 @@ public class RSAUtil {
      */
     public static boolean verify(String content, String sign, String publicKey) {
         RSA rsa = new RSA(null, publicKey);
-        try {
-            String decrypted = rsa.decryptStr(sign, KeyType.PublicKey);
-            return content.equals(decrypted);
-        } catch (Exception e) {
-            return false;
-        }
+        return rsa.verify(content.getBytes(), sign.getBytes());
     }
-}
+} 
